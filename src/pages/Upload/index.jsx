@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import axios from "axios";
 import UploadSection from "./styled";
+import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const UploadPage = () => {
   const [fileData, setFileData] = useState();
@@ -36,7 +38,11 @@ const UploadPage = () => {
 
     axios
       .post("http://localhost:3001/", data)
-      .then((resp) => console.log(resp))
+      .then((resp) => {
+        console.log(resp);
+        handleClearFile();
+        toast.success("Registros concluídos com sucesso!");
+      })
       .catch((err) => console.log(err));
   };
 
@@ -45,6 +51,8 @@ const UploadPage = () => {
     setFileName("");
     fileInputRef.current.value = null;
   };
+
+  const history = useHistory();
 
   return (
     <UploadSection>
@@ -75,6 +83,8 @@ const UploadPage = () => {
           <button onClick={() => sendTransactions(fileData)}>Enviar</button>
         </div>
       </div>
+
+      <button onClick={() => history.push("/list")}>Lista de Usuários</button>
     </UploadSection>
   );
 };

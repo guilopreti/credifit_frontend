@@ -6,6 +6,8 @@ const UploadSection = styled.section`
   align-items: center;
   justify-content: center;
   background-color: var(--grey-bg);
+  flex-direction: column;
+  gap: 10px;
 
   .upload-form-div {
     width: 90%;
@@ -55,6 +57,11 @@ const UploadSection = styled.section`
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
+  }
+
+  label:hover {
+    filter: brightness(75%);
+    transition: 0.3s;
   }
 
   button {
