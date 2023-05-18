@@ -7,3 +7,12 @@
 Deploy URL: https://credifit-guilopreti.vercel.app/
 
 This is a challenge by Coodesh
+
+## Instalação
+Caso queira rodar essa aplicação em seu proprio PC, pode seguins estes passos:
+1. Clone o repositório do projeto: git clone git@github.com:guilopreti/credifit_frontend.git
+2. Acesse o diretório do projeto
+3. Instale as dependências do projeto: yarn install
+4. Configure as variáveis de ambiente no arquivo `.env`: REACT_APP_API_URL="https://localOndeSuaAPIEstaFuncionando"
+5. Rode a aplicação com o comando: yarn start
+
