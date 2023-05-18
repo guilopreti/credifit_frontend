@@ -10,7 +10,7 @@ const UsersListPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/users")
+      .get(`${process.env.REACT_APP_API_URL}/users`)
       .then((resp) => setUsersList(resp.data))
       .catch((err) => console.log(err));
   }, []);

@@ -45,7 +45,7 @@ const UploadForm = () => {
     }
 
     axios
-      .post("http://localhost:3001/", data)
+      .post(`${process.env.REACT_APP_API_URL}/`, data)
       .then((resp) => {
         console.log(resp);
         handleClearFile();
