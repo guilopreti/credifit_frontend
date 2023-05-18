@@ -46,8 +46,7 @@ const UploadForm = () => {
 
     axios
       .post(`${process.env.REACT_APP_API_URL}/`, data)
-      .then((resp) => {
-        console.log(resp);
+      .then((_) => {
         handleClearFile();
         toast.success("Registros concluídos com sucesso!");
       })
